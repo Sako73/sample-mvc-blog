@@ -1,0 +1,22 @@
+﻿@model IList<WebMvcApp.Models.BlogPostModel>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <a href="/addpost/" class="btn btn-primary">Add new post ...</a>
+        </div>
+    </div>
+
+    @foreach (var blogPost in Model)
+    {
+        <div class="row">
+            <div class="col-xs-12 post-summary">
+                <h3>@blogPost.Title</h3>
+                <div class="date">@blogPost.Created</div>
+                <p>@blogPost.GetPostSummary()</p>
+                @Html.ActionLink("Continue reading ...", "Index", "ViewPost", new { id = blogPost.ID }, null)
+                <div class="gray-bottom-border">&nbsp;</div>
+            </div>
+        </div>
+    }
+</div>

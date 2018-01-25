@@ -1,0 +1,58 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+
+
+/* vv DEV ONLY vv */
+.yellow {
+    background: yellow;
+}
+
+.green {
+    background: green;
+}
+/* ^^ DEV ONLY ^^ */
+
+
+/* The styling of the blog post summary */
+.post-summary {
+    padding-top: .5em;
+    padding-bottom: .25em;
+}
+
+.gray-bottom-border {
+    border-bottom: solid 1px darkgray;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.date {
+    font-size: .8em;
+    font-style: italic;
+}
+
+.bottom-margin {
+    margin-bottom: .5em;
+}
+
+.form-horizontal .control-label {
+    /* text-align:right; */
+    text-align: left !important;
+}

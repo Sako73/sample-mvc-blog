@@ -1,0 +1,44 @@
+﻿@model DataModels.Models.BlogPost
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <a href="/home/" class="btn btn-primary">Home</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>@Model.Title</h3>
+        </div>
+    </div>
+    <div class="row">
+        <p class="col-xs-12">@Model.Post</p>
+    </div>
+    <div class="row">
+        <h4 class="col-xs-12">Comments</h4>
+    </div>
+    @foreach (var comment in Model.Comments)
+    {
+        <div class="row">
+            <div class="col-xs-12 post-summary">
+                <div class="date">@comment.Created.ToShortDateString()</div>
+                <div class="">@comment.Comment</div>
+                <div class="gray-bottom-border">&nbsp;</div>
+            </div>
+        </div>
+    }
+    <div class="row">
+        <h4 class="col-xs-12">Add Comment</h4>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @using (Html.BeginForm("AddComment", "ViewPost", FormMethod.Post, null))
+            {
+                @Html.AntiForgeryToken()
+                <input name="postId" type="hidden" value="@Model.ID" />
+                <input class="full-width bottom-margin" name="newComment" type="text" />
+                <input class="btn btn-primary" type="submit" value="Post Comment" />
+            }
+        </div>
+    </div>
+</div>
